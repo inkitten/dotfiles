@@ -6,9 +6,8 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					python = { "black", "ruff", "djlint" },
-					haskell = { "ormolu", "fourmolu" },
+					-- haskell = { "ormolu", "fourmolu" },
 					sh = { "shfmt", "beautysh" },
-					yaml = { "yamlfmt" },
 					json = { "jq" },
 					javascript = { "prettier", "esline" },
 					markdown = { "prettier" },

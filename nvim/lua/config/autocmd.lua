@@ -1,5 +1,6 @@
 -- Autocommands
 local api = vim.api
+vim.cmd[[colorscheme catppuccin]]
 
 -- Create a general augroup helper
 local function augroup(name)

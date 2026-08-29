@@ -1,27 +1,26 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	config = function()
-		local filetypes = {
-			"bash",
-			"c",
-			"javascript",
-			"html",
-			"css",
-			"lua",
-			"luadoc",
-			"markdown",
-			"markdown_inline",
-			"query",
-			"vim",
-			"vimdoc",
-			"python",
-		}
-		require("nvim-treesitter").install(filetypes)
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = filetypes,
-			callback = function()
-				vim.treesitter.start()
-			end,
-		})
-	end,
+  'nvim-treesitter/nvim-treesitter',
+  lazy = false,
+  build = ':TSUpdate',
+
+  config = function()
+    require('nvim-treesitter').setup {
+      install_dir = vim.fn.stdpath('data') .. '/site',
+    }
+
+    require('nvim-treesitter').install({
+      'rust',
+      'javascript',
+      'python',
+      'bash',
+      'c',
+      'cpp',
+      'lua',
+      'luadoc',
+      'vim',
+      'vimdoc',
+      'markdown',
+      'haskell',
+    }):wait(30000)
+  end,
 }

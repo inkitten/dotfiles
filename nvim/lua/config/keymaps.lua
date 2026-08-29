@@ -79,3 +79,8 @@ map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Help tags" })
 
 map("n", "<C-z>", "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
 map("n", "<C-x>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Previous buffer" })
+-- Toggle comment on current line (normal mode)
+vim.keymap.set("n", "<C-/>", "gcc", { remap = true, desc = "Toggle comment" })
+
+-- Toggle comment on selected lines (visual mode)
+vim.keymap.set("v", "<C-/>", "gc", { remap = true, desc = "Toggle comment" })
